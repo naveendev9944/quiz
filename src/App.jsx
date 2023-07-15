@@ -1,21 +1,33 @@
-import React,{ useState } from "react";
-import './App.css';
-import Menu from "./Components/MainMenu.jsx";
-import Quiz from "./Components/Quiz.jsx";
-import EndScreen from "./Components/EndScreen.jsx";
-import {QuickContext} from "./Helpers/Context"
-function Apps() {
-  const [gameState ,setGameState]=useState("menu");
-   return(
+import "./App.css";
+import Menu from "./Components/MainMenu";
+import Quiz from "./Components/Quiz";
+import EndScreen from "./Components/EndScreen";
+import { useState } from "react";
+import { GameStateContext } from "./Helpers/Context";
+function App() {
+  const [gameState, setGameState] = useState("menu");
+  const [userName, setUserName] = useState("");
+  const [score, setScore] = useState(0);
+
+  return (
     <div className="App">
       <h1>Quiz App</h1>
-      <QuizContext.Provider value={{gameState ,setGameState}}>
-      {gameState === "menu" && <Menu/>}
-      {gameState === "endscreen" && <EndScreen/>}
-      {gameState === "quiz" && <Quiz/>}
-      </QuizContext.Provider>
+      <GameStateContext.Provider
+        value={{
+          gameState,
+          setGameState,
+          userName,
+          setUserName,
+          score,
+          setScore,
+        }}
+      >
+        {gameState === "menu" && <Menu />}
+        {gameState === "playing" && <Quiz />}
+        {gameState === "finished" && <EndScreen />}
+      </GameStateContext.Provider>
     </div>
-   );
+  );
 }
 
-export default Apps
+export default App;

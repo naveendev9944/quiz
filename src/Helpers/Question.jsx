@@ -1,10 +1,10 @@
 export const Questions = [
     {
-      prompt: "What is my name?",
-      optionA: "John",
-      optionB: "Jake",
-      optionC: "Josh",
-      optionD: "Pedro",
+      prompt: "Which of the following is the correct name of React.js?",
+      optionA: "React",
+      optionB: "React.js",
+      optionC: "ReactJS",
+      optionD: "All of the above",
       asnwer: "optionD",
     },
     {

@@ -11,7 +11,7 @@ export const Questions = [
       prompt: "Which of this is not a programming language?",
       optionA: "Python",
       optionB: "JavaScript",
-      optionC: "MC-03",
+      optionC: "HTMLSgit",
       optionD: "Java",
       asnwer: "optionC",
     },
